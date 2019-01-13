@@ -1,0 +1,27 @@
+{
+  "name": "next-reflect",
+  "version": "0.0.1",
+  "description": "Object reflect based on next",
+  "main": "dist/next-reflect.js",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/afeiship/next-reflect",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "build",
+    "gulpfile.js"
+  ]
+}

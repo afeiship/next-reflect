@@ -4,12 +4,25 @@
 
   var NxReflect = nx.declare('nx.Reflect', {
     statics: {
-      defineProperty: function(inTarget, inKey, inDescriptor) {},
-      defineProperties: function(inTarget, inObject) {},
-      getOwnPropertyDescriptor: function(inTarget, inKey) {},
-      getOwnPropertyDescriptors: function(inTarget) {},
+      apply: function(inCallback, inContext, inArgs) {
+        return inCallback.apply(inContext, inArgs);
+      },
+      construct: function(inClass, inArgs) {},
+      get: function(inTarget, inKey) {
+        return inTarget[inKey];
+      },
+      set: function(inTarget, inKey, inValue) {
+        return (inTarget[inKey] = inValue);
+      },
+      defineProperty: function(inTarget) {},
+      deleteProperty: function(inTarget) {},
       has: function(inTarget, inKey) {},
-      apply: function() {}
+      ownKeys: function(inTarget, inKey) {},
+      isExtensible: function(inTarget, inKey) {},
+      preventExtensions: function(inTarget, inKey) {},
+      getOwnPropertyDescriptor: function(inTarget, inKey) {},
+      getPrototypeOf: function(inTarget, inKey) {},
+      setPrototypeOf: function(inTarget, inKey) {}
     }
   });
 

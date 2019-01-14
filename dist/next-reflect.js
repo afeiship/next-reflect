@@ -23,7 +23,7 @@
       ownKeys: function(inTarget) {
         var ownNames = Object.getOwnPropertyNames(inTarget);
         var ownSymbols = Object.getOwnPropertySymbols(inTarget);
-        return [].concat(ownNames, ownSymbols);
+        return ownNames.concat(ownSymbols);
       },
       isExtensible: function(inTarget) {
         this.__checkTarget(inTarget, 'isExtensible');

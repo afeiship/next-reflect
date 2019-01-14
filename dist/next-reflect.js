@@ -20,7 +20,7 @@
       defineProperty: function(inTarget) {},
       deleteProperty: function(inTarget) {},
       has: function(inTarget, inKey) {},
-      ownKeys: function(inTarget) {},
+      ownKeys: function(inTarget, inKey) {},
       isExtensible: function(inTarget) {
         if (typeof inTarget !== 'object') {
           throw new TypeError('Reflect.isExtensible called on non-object');

@@ -20,17 +20,27 @@
       defineProperty: function(inTarget) {},
       deleteProperty: function(inTarget) {},
       has: function(inTarget, inKey) {},
-      ownKeys: function(inTarget, inKey) {},
+      ownKeys: function(inTarget) {
+        var ownNames = Object.getOwnPropertyNames(inTarget);
+        var ownSymbols = Object.getOwnPropertySymbols(inTarget);
+        return [].concat(ownNames, ownSymbols);
+      },
       isExtensible: function(inTarget) {
+        this.__checkTarget(inTarget);
+        return Object.isExtensible(inTarget);
+      },
+      preventExtensions: function(inTarget) {
+        this.__checkTarget(inTarget);
+        return Object.preventExtensions(inTarget);
+      },
+      getOwnPropertyDescriptor: function(inTarget, inKey) {},
+      getPrototypeOf: function(inTarget, inKey) {},
+      setPrototypeOf: function(inTarget, inKey) {},
+      __checkTarget: function(inTarget) {
         if (typeof inTarget !== 'object') {
           throw new TypeError('Reflect.isExtensible called on non-object');
         }
-        return Object.isExtensible(inTarget);
-      },
-      preventExtensions: function(inTarget, inKey) {},
-      getOwnPropertyDescriptor: function(inTarget, inKey) {},
-      getPrototypeOf: function(inTarget, inKey) {},
-      setPrototypeOf: function(inTarget, inKey) {}
+      }
     }
   });
 

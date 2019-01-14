@@ -26,19 +26,19 @@
         return [].concat(ownNames, ownSymbols);
       },
       isExtensible: function(inTarget) {
-        this.__checkTarget(inTarget);
+        this.__checkTarget(inTarget, 'isExtensible');
         return Object.isExtensible(inTarget);
       },
       preventExtensions: function(inTarget) {
-        this.__checkTarget(inTarget);
+        this.__checkTarget(inTarget, 'preventExtensions');
         return Object.preventExtensions(inTarget);
       },
       getOwnPropertyDescriptor: function(inTarget, inKey) {},
       getPrototypeOf: function(inTarget, inKey) {},
       setPrototypeOf: function(inTarget, inKey) {},
-      __checkTarget: function(inTarget) {
+      __checkTarget: function(inTarget, inApi) {
         if (typeof inTarget !== 'object') {
-          throw new TypeError('Reflect.isExtensible called on non-object');
+          throw new TypeError('Reflect.' + inApi + ' called on non-object');
         }
       }
     }

@@ -21,6 +21,7 @@
       deleteProperty: function(inTarget) {},
       has: function(inTarget, inKey) {},
       ownKeys: function(inTarget) {
+        this.__checkTarget(inTarget, 'ownKeys');
         var ownNames = Object.getOwnPropertyNames(inTarget);
         var ownSymbols = Object.getOwnPropertySymbols(inTarget);
         return ownNames.concat(ownSymbols);

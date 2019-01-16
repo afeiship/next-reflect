@@ -17,7 +17,14 @@
       set: function(inTarget, inKey, inValue) {
         return (inTarget[inKey] = inValue);
       },
-      defineProperty: function(inTarget) {},
+      defineProperty: function(inTarget, inKey, inDescriptor) {
+        try {
+          Object.defineProperty(inTarget, inKey, inDescriptor);
+          return true;
+        } catch (_) {
+          return false;
+        }
+      },
       deleteProperty: function(inTarget) {},
       has: function(inTarget, inKey) {},
       ownKeys: function(inTarget) {
